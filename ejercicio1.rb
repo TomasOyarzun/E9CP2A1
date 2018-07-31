@@ -41,11 +41,11 @@ end
 average = 0
 total_numbers = 0
 recaudaciones.each do |info|
-	puts info.total_collection(info.days).first
-	puts info.total_collection(info.days).last
+	average += info.total_collection(info.days).first
+	total_numbers += info.total_collection(info.days).last
 end
 
-
+puts "El promedio total recaudado de todas las mesas en todos los días es: #{average / total_numbers.to_f}"
 
 
 
