@@ -46,7 +46,3 @@ recaudaciones.each do |info|
 end
 
 puts "El promedio total recaudado de todas las mesas en todos los días es: #{average / total_numbers.to_f}"
-
-
-
-

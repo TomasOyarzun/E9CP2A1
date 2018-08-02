@@ -1,4 +1,4 @@
-class Roulette
+	class Roulette
 	#Constructor
 	def initialize
 		@chance = (1..10).to_a
@@ -28,12 +28,11 @@ class Roulette
 			numbers << info.split("\n")
 		end
 		#Getting the number with more ocurrences
-		return numbers.group_by{ |i| i}.max{|x,y| x[1].length <=> y[1].length }[0]
+		return numbers.group_by{ |i| i}.max{|x,y| x[1].length <=> y[1].length }.first
 	end
 end
 
 a = Roulette.new
 puts a.reader
-
 
 

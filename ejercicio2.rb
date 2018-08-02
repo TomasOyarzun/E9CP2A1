@@ -7,10 +7,12 @@ class Course
 	end
 
 	def after(filter_date)
+		raise ArgumentError.new('argument is not a date') if filter_date.class != Date 
 		@dates.select{ |date| date < filter_date }
 	end
 
 	def before(filter_date)
+		raise ArgumentError.new('argument is not a date') if filter_date.class != Date
 		@dates.select{ |date| date > filter_date }
 	end
 end
@@ -23,4 +25,4 @@ data.each do |info|
 	courses << Course.new(*ls)
 end
 
-courses.each{ |e| puts "Cursos previos: #{e.name} #{e.after(Date.today)}\nCursos posteriores: #{e.name} #{e.before(Date.today)}"  }
+courses.each{ |e| puts "Cursos previos: #{e.name} #{e.after(Date.today)}\n Cursos posteriores: #{e.name} #{e.before(Date.today)}"  }
